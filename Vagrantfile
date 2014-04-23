@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.network :private_network, ip: "33.33.33.12"
 
-  config.vm.synced_folder "~/Src", "/home/vagrant/Src", nfs: true
+  config.vm.synced_folder ".", "/home/vagrant/Src", nfs: true
   #config.vm.synced_folder "public_html", "/home/vagrant/public_html", nfs: true
   #config.vm.synced_folder "public_html", "/home/vagrant/public_html"
 
