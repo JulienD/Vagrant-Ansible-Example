@@ -1,0 +1,19 @@
+---
+- name: Upgrade all packages (Ubuntu)
+  apt: upgrade=yes update_cache=yes
+
+- name: ensure ntpd is at the latest version
+  apt: pkg=ntp state=latest
+  notify:
+    - restart ntpd
+
+- name: Install Essential Packages
+  apt: pkg={{ item }} state=present
+  with_items:
+    - curl
+    - python-pycurl
+    - vim
+    - zsh
+
+- name: Install Git
+  apt: pkg=git-core state=present

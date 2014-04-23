@@ -1,0 +1,8 @@
+---
+- name: Deploys basis applications
+  hosts: default
+  user: vagrant
+  sudo: yes
+
+  roles:
+    - system
